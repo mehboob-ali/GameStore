@@ -1,0 +1,45 @@
+GET http://localhost:5083/games
+
+###
+GET http://localhost:5083/games/3
+
+###
+//If request a game which is not available
+GET http://localhost:5083/games/10
+
+
+###
+POST http://localhost:5083/games
+Content-Type: application/json
+
+{
+    "name" : "Minecraft",
+    "genre" : "Kids and Family",
+    "price" : 9.99,
+    "releaseDate" : "2011-11-18"
+}
+
+###
+PUT http://localhost:5083/games/2
+Content-Type: application/json
+
+{
+    "name" : "Street Fighter II Turbo",
+    "genre" : "Kids and Family",
+    "price" : 59.99,
+    "releaseDate" : "2011-11-18"
+}
+
+###
+///PUT request for a id which is not present
+PUT http://localhost:5083/games/22
+Content-Type: application/json
+
+{
+    "name" : "Street Fighter II Turbo",
+    "genre" : "Kids and Family",
+    "price" : 59.99,
+    "releaseDate" : "2011-11-18"
+}
+###
+DELETE http://localhost:5083/games/1
