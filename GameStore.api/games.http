@@ -5,7 +5,7 @@ GET http://localhost:5083/games/19
 
 ###
 //If request a game which is not available
-GET http://localhost:5083/games/10
+GET http://localhost:5083/games/2
 
 
 ###
@@ -13,20 +13,20 @@ POST http://localhost:5083/games
 Content-Type: application/json
 
 {
-    "name" : "Spiderman 3",
+    "name" : "Marvels Spiderman 2",
     "genreId" : 2,
-    "price" : 19.99,
-    "releaseDate" : "2011-11-18"
+    "price" : 99.00,
+    "releaseDate" : "2023-08-25"
 }
 
 ###
-PUT http://localhost:5083/games/19
+PUT http://localhost:5083/games/2
 Content-Type: application/json
 
 {
     "name" : "MEtal Gear Solid 2",
-    "genreId" : 1,
-    "price" : 29.99,
+    "genreId" : 2,
+    "price" : 5.99,
     "releaseDate" : "2008-02-25"
 }
 
@@ -42,4 +42,4 @@ Content-Type: application/json
     "releaseDate" : "2011-11-18"
 }
 ###
-DELETE http://localhost:5083/games/7
+DELETE http://localhost:5083/games/6
