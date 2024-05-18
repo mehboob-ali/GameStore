@@ -25,7 +25,7 @@ namespace GameStore.api.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Game",
+                name: "Games",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -37,9 +37,9 @@ namespace GameStore.api.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Game", x => x.Id);
+                    table.PrimaryKey("PK_Games", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Game_Genres_GenreId",
+                        name: "FK_Games_Genres_GenreId",
                         column: x => x.GenreId,
                         principalTable: "Genres",
                         principalColumn: "Id",
@@ -47,8 +47,8 @@ namespace GameStore.api.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Game_GenreId",
-                table: "Game",
+                name: "IX_Games_GenreId",
+                table: "Games",
                 column: "GenreId");
         }
 
@@ -56,7 +56,7 @@ namespace GameStore.api.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Game");
+                name: "Games");
 
             migrationBuilder.DropTable(
                 name: "Genres");
