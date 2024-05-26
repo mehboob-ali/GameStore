@@ -35,15 +35,22 @@ public static class GamesEndpoints
         //POST /games
         group.MapPost("/", async (CreateGameDto newGame, GameStoreContext dbContext)=>
         {
-            Game game = newGame.ToEntity();
+                try
+                {
+                    Game game = newGame.ToEntity();
 
-            dbContext.Games.Add(game);
-            await dbContext.SaveChangesAsync();
+                    dbContext.Games.Add(game);
+                    await dbContext.SaveChangesAsync();
 
-            return Results.CreatedAtRoute(
-                GetGameEndPointName,
-                new {id = game.Id },
-                game.ToGameDetailsDto());
+                    return Results.CreatedAtRoute(
+                        GetGameEndPointName,
+                        new { id = game.Id },
+                        game.ToGameDetailsDto());
+                }
+                catch (ArgumentException ex)
+                {
+                    return Results.BadRequest(ex.Message);
+                }
         });
         
 

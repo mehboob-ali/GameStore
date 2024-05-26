@@ -1,30 +1,40 @@
 ﻿using GameStore.api.Dtos;
 using GameStore.api.Entities;
-
+using System.Globalization;
 namespace GameStore.api.Mapping;
 
 public static class GameMapping
 {
     public static Game ToEntity(this CreateGameDto game)
     {
+        DateOnly releaseDate;
+        if(!DateOnly.TryParseExact(game.ReleaseDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out releaseDate))
+        {
+            throw new ArgumentException("Invalid date format. Use yyyy-MM-dd."); 
+        }
         return new Game()
         {
             Name = game.Name,
             GenreId = game.GenreId,
             Price = game.Price,
-            ReleaseDate = game.ReleaseDate
+            ReleaseDate = releaseDate
         };
     }
 
     public static Game ToEntity(this UpdateGameDto game, int id)
     {
+        DateOnly releaseDate;
+        if(!DateOnly.TryParseExact(game.ReleaseDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out releaseDate))
+        {
+            throw new ArgumentException("Invalid date format. Use yyyy-MM-dd."); 
+        }
         return new Game()
         {
             Id = id,
             Name = game.Name,
             GenreId = game.GenreId,
             Price = game.Price,
-            ReleaseDate = game.ReleaseDate
+            ReleaseDate = releaseDate
         };
     }    
 

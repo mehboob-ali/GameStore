@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mehbo\\Desktop\\DOTNET\\GameStore\\GameStore.api\\GameStore.api.csproj": {}
+    "C:\\Users\\mehbo\\Desktop\\DOTNET\\GameStore\\gameStore.api\\GameStore.api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mehbo\\Desktop\\DOTNET\\GameStore\\GameStore.api\\GameStore.api.csproj": {
+    "C:\\Users\\mehbo\\Desktop\\DOTNET\\GameStore\\gameStore.api\\GameStore.api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mehbo\\Desktop\\DOTNET\\GameStore\\GameStore.api\\GameStore.api.csproj",
+        "projectUniqueName": "C:\\Users\\mehbo\\Desktop\\DOTNET\\GameStore\\gameStore.api\\GameStore.api.csproj",
         "projectName": "GameStore.api",
-        "projectPath": "C:\\Users\\mehbo\\Desktop\\DOTNET\\GameStore\\GameStore.api\\GameStore.api.csproj",
+        "projectPath": "C:\\Users\\mehbo\\Desktop\\DOTNET\\GameStore\\gameStore.api\\GameStore.api.csproj",
         "packagesPath": "C:\\Users\\mehbo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mehbo\\Desktop\\DOTNET\\GameStore\\GameStore.api\\obj\\",
+        "outputPath": "C:\\Users\\mehbo\\Desktop\\DOTNET\\GameStore\\gameStore.api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mehbo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
